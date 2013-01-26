@@ -22,7 +22,9 @@ The function returns one value 129 bytes long. This is the combined final hash o
 It's seperated by a '/', so in php to seperate it would be like:
 
 $newpass = explode('/', $newpass);
+
 $newsalt = $newpass[1]; // The salt is always the second part of the array
+
 $newpass = $newpass[0]; // The password is always the first part of the array
 
 I have a live demo of the use of HashPass located at http://p.unps.us/pass Arguments are fed through the url using GET.

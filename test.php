@@ -3,14 +3,6 @@
 // Live demo located at: http://p.unps.us/pass
 
 $start = microtime(true);
-include('HashPass.php');
- if(isset($_GET['mysourceisyours'])) {
-   show_source('index.php');
-   die();
- }
-if (isset($_GET['nyan'])){
-    header('location:http://nyan.cat');
-}
 echo "Demo of HashPass.php output is in verbose mode<br>\r\n";
 echo "Required: password and number of iterations, example below: <br>\r\n";
 echo "http://p.unps.us/pass/?pass=[somepassword]&i=[somenumber](optional)&salt=[anything can go here, use previous salt and previous pass to generate same hash - will always generate same hash with same pass and same salt]<br>\r\n";

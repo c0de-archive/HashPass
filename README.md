@@ -46,6 +46,7 @@ $myhashpass = hashpass(''); This is legal and will not return above error.
 $myhashpass = hashpass(""); This is also legal and will not return above error.
 
 $myhashpass = hashpass('password', -1); Negative numbers are ignored and treated as if no iterations are specified.
+
 ------------------
 
 HashPass by David Todd is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.

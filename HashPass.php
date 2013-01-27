@@ -1,5 +1,5 @@
 <?php
-/* HashPass() function takes $plaintext, $salt and $i (number of iterations) as inputs and outputs $hashpass - $salt and $i are optional
+/* HashPass() function takes $plaintext, $i and $salt (number of iterations) as inputs and outputs $hashpass - $salt and $i are optional
  * Copyright David Todd (C) 2012 
  * http://www.unps-gama.info
  * This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. 
@@ -9,7 +9,7 @@
  * If no $plaintext provided, die with error message saved to error variable
  */
 
-function hashpass($plaintext, $salt, $i){
+function hashpass($plaintext, $i, $salt){
     if($plaintext == null) die("No password detected"); // Append error into common error string for parsing later
     $plaintext = hash("sha1", $plaintext); // First step - get plaintext sha1
     if($salt == null || $salt == ''){
@@ -18,7 +18,7 @@ function hashpass($plaintext, $salt, $i){
         $salt = $salt.mt_rand(5000, 80000); // Append new random number between 5000 and 80000 to md5 salt
         $salt = hash("sha256", $salt); // Take a sha256 hash of new salt and done with salt generation
     }
-    if($i ==null || $i == ''){
+    if($i == null || $i == ''){
         $plaintext = hash("sha256", $plaintext.$salt); // Take first sha256 hash of $plaintext+$salt (64 bits)
         $plaintext = hash("sha1", $salt.$plaintext.$salt); // Take sha1 of salt+plaintext+salt (32 bits)
         $plaintext = hash("sha512", $salt.$plaintext.$salt.$salt.$plaintext.$salt); // Take sha512 of this (128bits)

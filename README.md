@@ -32,5 +32,21 @@ For example if I wanted to hash "worldsbestestpassword123", I would do http://p.
 Continuing on from above, lets specify a number of iterations (hard limit of 50 on this demo): http://p.unps.us/pass/?pass=worldsbestestpassword123&i=4
 One more argument is accepted, and that is salt. Previously generated salts ar 64 characters long, but anything will work there. 
 
+------------------------------------
+$myhashpass = hashpass('password', 10); will do lines 29-34, 10 times.
+
+$myhashpass = hashpass('password', '', 'random info at any length can go here - needed for matching hashes'); will simply do lines 22-26.
+
+$myhashpass = hashpass('password'); will do lines 14-26.
+
+$myhashpass = hashpass(); will return "No password detected" error.
+
+$myhashpass = hashpass(''); This is legal and will not return above error.
+
+$myhashpass = hashpass(""); This is also legal and will not return above error.
+
+$myhashpass = hashpass('password', -1); Negative numbers are ignored and treated as if no iterations are specified.
+------------------
+
 HashPass by David Todd is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 Please attribute to my domain: http://www.unps-gama.info and let me know of any improvements I can make!

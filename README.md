@@ -1,6 +1,9 @@
 HashPass
 ========
 
+## This project was never used in production as I understand the risks of rolling your own crypto and has not been updated since creation
+## This project is now archived, but for now, a demo can be found at https://dev.c0defox.es/pass
+
 HashPass is my password hashing function to be used in my main site to handle login passwords. 
 It is heavily commented, perhaps too commented but it explains everything.
 
